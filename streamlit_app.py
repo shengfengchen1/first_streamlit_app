@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-
+import snowflake.connector
 
 st.title('My Parents New Healthy Diner 2')
 st.write("Hello *world!* st.write")
