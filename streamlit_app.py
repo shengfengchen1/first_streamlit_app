@@ -24,7 +24,6 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 st.dataframe(fruits_to_show)
 
 #New section to display fruityvice api response
-st.header('Fruityvice Fruit Advice!')
 ###########################################################################################
 st.header('Fruityvice Fruit Advice!')
 fruit_choice = st.text_input('What fruit would you like information about?','Kiwi')
@@ -51,9 +50,9 @@ st.dataframe(fruityvice_normalized)
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("select * from fruit_load_list")
-my_data_row = my_cur.fetchone()
+my_data_row = my_cur.fetchall()
 st.text("The fruit load list contains:")
-st.text(my_data_row)
+st.dataframe(my_data_row)
 
 
 
