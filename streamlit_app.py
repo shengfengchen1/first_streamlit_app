@@ -48,7 +48,7 @@ st.dataframe(fruityvice_normalized)
 # st.text("Hello from Snowflake:")
 # st.text(my_data_row)
 
-st.stop()
+# st.stop()
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("select * from fruit_load_list")
